@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Canvas Test</title>
+    <script src="js/seajs/sea-debug.js"></script>
+    <script type="text/javascript">
+    var timestamp = 1 || new Date().getTime();
+    seajs.config({
+        debug: true,
+        map: [
+            function(url) {
+                url += '?t=';
+                url += timestamp;
+                return url;
+            }
+        ]
+    });
+    seajs.on('error', function(data) {
+        console.log(data);
+    });
+    seajs.use('./js/test', function() {});
+</script>
+</head>
+<body>
+    <video></video>
+    <canvas id="bg"  ></canvas>
+    <canvas id="main"></canvas>
+    <div id="console"></div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8">
+<title>Fire,Hero!</title>
+<script type="text/javascript" src="js/createjs/events/Event.js"></script>
+<script type="text/javascript" src="js/createjs/events/EventDispatcher.js"></script>
+<script type="text/javascript" src="js/createjs/utils/IndexOf.js"></script>
+<script type="text/javascript" src="js/createjs/utils/Proxy.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/utils/UID.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/utils/Ticker.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/geom/Matrix2D.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/geom/Point.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/geom/Rectangle.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/display/Shadow.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/display/SpriteSheet.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/display/Graphics.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/display/DisplayObject.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/display/Container.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/display/Stage.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/display/Bitmap.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/display/Sprite.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/display/BitmapAnimation.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/display/BitmapText.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/display/Shape.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/display/Text.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/display/DOMElement.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/events/MouseEvent.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/filters/Filter.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/ui/ButtonHelper.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/ui/Touch.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/utils/SpriteSheetUtils.js"></script>
+<script type="text/javascript" src="js/createjs/easeljs/utils/SpriteSheetBuilder.js"></script>
+<script type="text/javascript" src="js/createjs/preloadjs/AbstractLoader.js"></script>
+<script type="text/javascript" src="js/createjs/preloadjs/LoadQueue.js"></script>
+<script type="text/javascript" src="js/createjs/preloadjs/TagLoader.js"></script>
+<script type="text/javascript" src="js/createjs/preloadjs/XHRLoader.js"></script>
+
+<script src="js/seajs/sea-debug.js"></script>
+</head>
+<body>
+<div>
+    操作说明：
+    A、D:左右移动;W:上跳;S:蹲下;Y:格挡;U:臀击;<br>
+    G:升龙拳;H:直拳;J:上空翻;K:上踢;L:下踢;I:旋风腿;O:冲击波;P:大招;
+</div>
+ <script type="text/javascript">
+    var timestamp = 0 || new Date().getTime();
+    seajs.config({
+        debug:true,
+        alias: {
+          '$': 'jquery/jquery'
+        },
+        map: [
+            function(url) {
+                url += '?t=';
+                url += timestamp;
+                return url;
+            }
+        ]
+    });
+    seajs.on('error',function(data){
+        console.log(data);
+    });
+    seajs.use('./js/game.js', function(Game) {});
+    </script>
+</body>
+</html>
